@@ -1,6 +1,6 @@
 <template>
-  <article class="work" :class="{ reverse: isReversed }">
-    <div class="media">
+  <article class="work" :class="{ reverse: isReversed, wide: isWide }">
+    <div class="media" :style="{ aspectRatio }">
       <img :src="img" :alt="imgAlt || title" loading="lazy" />
     </div>
 
@@ -47,6 +47,7 @@ const props = defineProps({
   title: String,
   img: String,
   imgAlt: String,
+  aspectRatio: { type: String, default: "2 / 3" },
   metaLines: { type: Array, default: () => [] },
   description: String,
   credits: { type: Array, default: () => [] },
@@ -55,6 +56,7 @@ const props = defineProps({
 });
 
 const isReversed = computed(() => props.index % 2 === 1);
+const isWide = computed(() => props.aspectRatio !== "2 / 3");
 </script>
 
 <style scoped>
@@ -68,6 +70,11 @@ const isReversed = computed(() => props.index % 2 === 1);
   border-bottom: 1px solid var(--color-rule);
 }
 
+.work.wide {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+
 .work:last-child {
   border-bottom: 0;
 }
@@ -75,6 +82,10 @@ const isReversed = computed(() => props.index % 2 === 1);
 .work.reverse {
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.92fr);
   grid-template-areas: "content media";
+}
+
+.work.wide.reverse {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.15fr);
 }
 
 .media {
