@@ -167,9 +167,15 @@ const isReversed = computed(() => props.index % 2 === 1);
     gap: 1.25rem;
   }
 
-  .project.reverse .content,
+  /* Image always leads on small screens */
+  .content,
+  .project.reverse .content {
+    order: 2;
+  }
+
+  .media,
   .project.reverse .media {
-    order: initial;
+    order: 1;
   }
 
   .content {
