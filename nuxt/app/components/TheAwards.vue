@@ -140,17 +140,31 @@ const props = defineProps({
 }
 
 @media (max-width: 700px) {
+  .awards {
+    padding: 16px 0 20px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 12px;
   }
   .img {
-    max-height: 64px;
+    max-height: 56px;
   }
 }
 
 @media (max-width: 420px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px 10px;
+  }
+
+  .img {
+    max-height: 48px;
   }
 }
 </style>

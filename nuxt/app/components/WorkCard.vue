@@ -83,7 +83,7 @@ const isReversed = computed(() => props.index % 2 === 1);
   grid-template-areas: "media content";
   gap: clamp(28px, 4vw, 56px);
   align-items: start;
-  padding: 48px 0 96px 0;
+  padding: clamp(36px, 5vw, 48px) 0 clamp(56px, 8vw, 96px) 0;
 }
 
 
@@ -116,8 +116,8 @@ const isReversed = computed(() => props.index % 2 === 1);
 }
 
 .title {
-  font-size: 46px;
-  line-height: 1;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.05;
   margin-bottom: 12px;
   color: #843322;
   font-weight: 500;
@@ -181,6 +181,7 @@ const isReversed = computed(() => props.index % 2 === 1);
     grid-template-areas:
       "media"
       "content";
+    gap: 22px;
   }
 
   .work-card.reverse {
@@ -188,6 +189,20 @@ const isReversed = computed(() => props.index % 2 === 1);
     grid-template-areas:
       "media"
       "content";
+  }
+
+  .media {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .description {
+    max-width: none;
+  }
+
+  .block-title {
+    font-size: 20px;
   }
 }
 </style>

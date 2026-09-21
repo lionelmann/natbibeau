@@ -83,16 +83,16 @@ onBeforeUnmount(() => {
 <style scoped>
 .bio {
   background: #843322; /* matches header/footer band */
-  padding: clamp(56px, 6vw, 92px) 0;
+  padding: clamp(48px, 6vw, 92px) 0;
 }
 
 /* Base (before reveal) */
 .inner {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 clamp(20px, 5vw, 48px);
   color: #fefcde;
-  font-size: 18px;
+  font-size: clamp(16px, 2.8vw, 18px);
   line-height: 1.55;
   opacity: 0;
   transform: translateY(14px);
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
 }
 
 .inner p + p {
-  margin-top: 28px;
+  margin-top: clamp(20px, 3vw, 28px);
 }
 
 em {
