@@ -70,22 +70,27 @@ const isWide = computed(() => props.aspectRatio !== "2 / 3");
   border-bottom: 1px solid var(--color-rule);
 }
 
-.work.wide {
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
-  align-items: center;
-}
-
-.work:last-child {
-  border-bottom: 0;
-}
-
-.work.reverse {
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.92fr);
-  grid-template-areas: "content media";
-}
-
+.work.wide,
 .work.wide.reverse {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.15fr);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "media"
+    "content";
+  gap: clamp(1.35rem, 3vw, 2rem);
+  align-items: start;
+}
+
+.work.wide .media {
+  width: 100%;
+  max-width: none;
+}
+
+.work.wide .title {
+  max-width: none;
+}
+
+.work.wide .content {
+  max-width: 42rem;
 }
 
 .media {
