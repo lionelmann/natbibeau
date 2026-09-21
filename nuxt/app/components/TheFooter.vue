@@ -37,7 +37,14 @@
 /* Mobile tightening without changing proportions */
 @media (max-width: 640px) {
   .site-footer {
-    min-height: 96px;
+    min-height: 88px;
+    padding: 0 20px;
+  }
+
+  .email {
+    font-size: 14px;
+    word-break: break-word;
+    text-align: center;
   }
 }
 </style>

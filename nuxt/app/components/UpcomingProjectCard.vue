@@ -86,7 +86,7 @@ const isReversed = computed(() => props.index % 2 === 1);
   display: grid;
   grid-template-columns: 1fr 1.15fr; /* image slightly heavier like screenshot */
   gap: clamp(24px, 4vw, 64px);
-  padding: 48px 0;
+  padding: clamp(32px, 5vw, 48px) 0;
 }
 
 .card.reverse .content {
@@ -103,8 +103,8 @@ const isReversed = computed(() => props.index % 2 === 1);
 }
 
 .title {
-  font-size: 46px;
-  line-height: 0.95;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.05;
   color: #843322;
   font-weight: 500;
 
@@ -179,6 +179,7 @@ const isReversed = computed(() => props.index % 2 === 1);
   .card {
     grid-template-columns: 1fr;
     align-items: start;
+    gap: 20px;
   }
 
   .card.reverse .content,
@@ -193,6 +194,10 @@ const isReversed = computed(() => props.index % 2 === 1);
   .title,
   .meta {
     text-align: left; /* better reading on mobile */
+  }
+
+  .media {
+    aspect-ratio: 16 / 10;
   }
 }
 </style>

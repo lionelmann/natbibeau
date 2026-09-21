@@ -37,12 +37,12 @@ const props = defineProps({
 <style scoped>
 .upcoming-header {
   background: #fbf9dc;
-  padding: 96px 0;
- 
+  padding: clamp(48px, 8vw, 96px) 0 0;
 }
 /* align with site container patterns */
 .inner {
   margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
 }
 
 .photos {
@@ -88,16 +88,30 @@ const props = defineProps({
 
 @media (max-width: 800px) {
   .photos {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .photo img {
+    height: clamp(140px, 38vw, 220px);
+  }
+
+  .title {
+    margin-top: clamp(12px, 2vw, 20px);
+    font-size: clamp(28px, 9vw, 42px);
+    line-height: 0.98;
+    padding-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 420px) {
+  .photos {
     grid-template-columns: 1fr;
   }
 
   .photo img {
-    height: clamp(180px, 42vw, 320px);
-  }
-
-  .title {
-    margin-top: clamp(18px, -3.2vw, -28px);
-    font-size: 50px;
+    height: clamp(160px, 48vw, 220px);
   }
 }
 </style>

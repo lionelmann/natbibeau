@@ -26,7 +26,7 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 48px; /* left inset seen in screenshot */
+  padding: 0 clamp(20px, 5vw, 48px);
 }
 
 .brand {
@@ -52,6 +52,22 @@
   font-size: clamp(13px, 1.2vw, 15px);
   line-height: 1.1;
   opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    min-height: 84px;
+    padding: 18px 0;
+  }
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 0.06em;
+  }
+
+  .brand {
+    gap: 6px;
+  }
 }
 
 </style>
