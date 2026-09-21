@@ -140,10 +140,11 @@ const upcoming = [
     ],
   },
   {
-    title: "Doula",
+    title: "Doula: A True Crime",
     img: "/images/doula.png",
     metaLines: [
-      "Planned Release: 2026",
+      "Premieres October 7, 2026 at 8 p.m. on CBC",
+      "Streaming on CBC Gem",
       "3 × 1hr",
       "A CBC Original with Muse Entertainment",
       "A Series by Nathalie Bibeau",
