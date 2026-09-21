@@ -1,12 +1,45 @@
-/* Inter font family */
-@import "@fontsource/inter/latin.css";
-//@import "@fontsource/space-grotesk/latin.css";
-//@import "@fontsource/libre-baskerville/latin.css";
+@import "@fontsource/libre-baskerville/latin-400.css";
+@import "@fontsource/libre-baskerville/latin-400-italic.css";
+@import "@fontsource/libre-baskerville/latin-700.css";
+@import "@fontsource/space-grotesk/latin-400.css";
+@import "@fontsource/space-grotesk/latin-500.css";
+@import "@fontsource/space-grotesk/latin-700.css";
 
-/* Base typography */
+:root {
+  --color-ink: #1a1512;
+  --color-ink-soft: #3d342c;
+  --color-paper: #f7f1df;
+  --color-paper-deep: #efe6c9;
+  --color-burgundy: #7a2c1f;
+  --color-burgundy-deep: #5e2116;
+  --color-cream: #fef8e8;
+  --color-rule: rgba(122, 44, 31, 0.28);
+
+  --font-display: "Bauhaus", "Century Gothic", "Futura", sans-serif;
+  --font-body: "Libre Baskerville", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-meta: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+
+  --measure: 62ch;
+  --page-max: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-y: clamp(3.5rem, 8vw, 6.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 html {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(122, 44, 31, 0.08), transparent 60%),
+    linear-gradient(180deg, var(--color-paper) 0%, var(--color-paper-deep) 100%);
+  background-attachment: fixed;
+}
+
+body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -14,5 +47,17 @@ h2,
 h3,
 .display,
 .title {
-    font-family: "Bauhaus", system-ui, sans-serif;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+
+em {
+  font-style: italic;
+}
+
+::selection {
+  background: rgba(122, 44, 31, 0.18);
+  color: var(--color-ink);
 }

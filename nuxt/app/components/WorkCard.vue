@@ -1,15 +1,13 @@
 <template>
-  <article class="work-card" :class="{ reverse: isReversed }">
-    <!-- IMAGE -->
+  <article class="work" :class="{ reverse: isReversed }">
     <div class="media">
       <img :src="img" :alt="imgAlt || title" loading="lazy" />
     </div>
 
-    <!-- TEXT -->
     <div class="content">
       <h2 class="title">{{ title }}</h2>
 
-      <div class="meta">
+      <div v-if="metaLines?.length" class="meta">
         <p v-for="(line, i) in metaLines" :key="i" class="meta-line">
           {{ line }}
         </p>
@@ -49,57 +47,42 @@ const props = defineProps({
   title: String,
   img: String,
   imgAlt: String,
-
-  metaLines: {
-    type: Array,
-    default: () => [],
-  },
-
+  metaLines: { type: Array, default: () => [] },
   description: String,
-
-  credits: {
-    type: Array,
-    default: () => [],
-  },
-
-  recognition: {
-    type: Array,
-    default: () => [],
-  },
-
-  index: {
-    type: Number,
-    default: 0,
-  },
+  credits: { type: Array, default: () => [] },
+  recognition: { type: Array, default: () => [] },
+  index: { type: Number, default: 0 },
 });
 
 const isReversed = computed(() => props.index % 2 === 1);
 </script>
 
 <style scoped>
-.work-card {
+.work {
   display: grid;
-  grid-template-columns: 1.3fr 2fr; /* media always 1fr, content always 2fr */
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.35fr);
   grid-template-areas: "media content";
-  gap: clamp(28px, 4vw, 56px);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
   align-items: start;
-  padding: clamp(36px, 5vw, 48px) 0 clamp(56px, 8vw, 96px) 0;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  border-bottom: 1px solid var(--color-rule);
 }
 
+.work:last-child {
+  border-bottom: 0;
+}
 
-/* Reverse: swap both placement AND column widths */
-.work-card.reverse {
-  grid-template-columns: 2fr 1.3fr; /* content is still 2fr, media is still 1fr */
+.work.reverse {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.92fr);
   grid-template-areas: "content media";
 }
 
-
-/* IMAGE */
 .media {
   grid-area: media;
   width: 100%;
-  aspect-ratio: 2 / 3; /* poster ratio */
+  aspect-ratio: 2 / 3;
   overflow: hidden;
+  background: #111;
 }
 
 .media img {
@@ -107,102 +90,116 @@ const isReversed = computed(() => props.index % 2 === 1);
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.8s var(--ease-out);
 }
 
-/* TEXT */
+@media (hover: hover) {
+  .work:hover .media img {
+    transform: scale(1.03);
+  }
+}
+
 .content {
   grid-area: content;
-  color: #1c1c1c;
+  color: var(--color-ink);
+  padding-top: 0.25rem;
 }
 
 .title {
-  font-size: clamp(28px, 5vw, 46px);
-  line-height: 1.05;
-  margin-bottom: 12px;
-  color: #843322;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.7rem, 3.6vw, 2.65rem);
+  color: var(--color-burgundy);
+  font-weight: 700;
+  max-width: 16ch;
 }
 
 .meta {
-  margin: 24px 0;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  color: #3a3a32;
-}
-
-.meta-line {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.35;
-  
+  margin: 1.25rem 0 1.1rem;
+  font-family: var(--font-meta);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  line-height: 1.55;
 }
 
 .description {
-  margin: 18px 0 22px;
-  font-size: 16px;
-  line-height: 1.4;
-  max-width: 48ch;
+  margin: 0 0 1.5rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: var(--measure);
+  color: var(--color-ink);
 }
 
-/* Credits / Recognition */
 .block {
-  margin-top: 22px;
+  margin-top: 1.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--color-rule);
 }
 
 .block-title {
-  font-size: 24px;
-  font-weight: 500;
-  color: #843322;
-  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .list-item {
-  font-size: 15px;
-  line-height: 1.3;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr;
+  gap: 0.65rem 1rem;
 }
 
 .list-item + .list-item {
-  margin-top: 4px;
+  margin-top: 0.45rem;
 }
 
 .label {
-  font-weight: 800;
+  font-family: var(--font-meta);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
 }
 
 .value {
   font-weight: 400;
 }
 
-/* Responsive */
 @media (max-width: 860px) {
-  .work-card {
+  .work,
+  .work.reverse {
     grid-template-columns: 1fr;
     grid-template-areas:
       "media"
       "content";
-    gap: 22px;
-  }
-
-  .work-card.reverse {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "media"
-      "content";
+    gap: 1.35rem;
   }
 
   .media {
-    max-width: 320px;
+    max-width: 22rem;
     margin: 0 auto;
-    width: 100%;
   }
 
-  .description {
+  .title {
     max-width: none;
   }
 
-  .block-title {
-    font-size: 20px;
+  .list-item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media img {
+    transition: none;
   }
 }
 </style>

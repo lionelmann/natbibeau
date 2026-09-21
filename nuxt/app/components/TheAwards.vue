@@ -1,10 +1,5 @@
-<!-- components/TheAwards.vue -->
 <script setup>
 const props = defineProps({
-  /**
-   * If you pass an array, it should look like:
-   * [{ src: "/images/award-hotdocs.avif", alt: "Hot Docs Audience Award 2020" }, ...]
-   */
   awards: {
     type: Array,
     default: () => [
@@ -15,17 +10,14 @@ const props = defineProps({
       { src: "/images/Buffalo_laurels.png", alt: "Buffalo International Film Festival 2020" },
       { src: "/images/Calgary_laurels.png", alt: "CIFF Official Selection" },
       { src: "/images/award-forestcity.avif", alt: "Forest City Film Festival 2020" },
-      { src: "/images/award-env.avif", alt: "Nominee" },
+      { src: "/images/award-env.avif", alt: "Environmental Award nominee" },
       { src: "/images/award-doxa.avif", alt: "DOXA Documentary Film Festival 2020" },
       { src: "/images/award-goldenhorse.avif", alt: "Taipei Golden Horse Film Festival 2020" },
-      { src: "/images/award-hotsprings.avif", alt: "Hot Docs 2020" },
-      { src: "/images/award-film.avif", alt: "Hot Springs Documentary Film Festival 2020" },
+      { src: "/images/award-hotsprings.avif", alt: "Hot Springs Documentary Film Festival 2020" },
+      { src: "/images/award-film.avif", alt: "Festival selection" },
     ],
   },
-
-  maxWidth: { type: String, default: "1344px" },
-  background: { type: String, default: "#f4eddc" }, // warm paper tone
-  borderColor: { type: String, default: "#a33a2a" }, // thin red line like your reference
+  borderColor: { type: String, default: "var(--color-burgundy)" },
 });
 </script>
 
@@ -54,24 +46,24 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .awards {
-  background: #fbf9dc;
-  border-bottom: 2px solid v-bind(borderColor);
-  padding: clamp(18px, 3vw, 34px) 0; /* a bit more breathing room than the ref */
+  background: color-mix(in srgb, var(--color-paper) 70%, white);
+  border-bottom: 1px solid v-bind(borderColor);
+  padding: clamp(1.1rem, 2.5vw, 1.85rem) 0;
 }
 
 .inner {
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 28px);
+  padding: 0 var(--gutter);
 }
 
 .grid {
   list-style: none;
   margin: 0;
   padding: 0;
-
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 22px);
+  gap: clamp(0.75rem, 1.8vw, 1.35rem);
   align-items: center;
 }
 
@@ -79,35 +71,29 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(44px, 6vw, 78px);
+  min-height: clamp(2.5rem, 5.5vw, 4.5rem);
   opacity: 0;
-  transform: translateY(8px);
-  animation: reveal 0.6s ease-out forwards;
-  animation-delay: calc(var(--i) * 60ms);
-  transition: transform 0.25s ease, filter 0.25s ease;
-  will-change: transform;
+  transform: translateY(6px);
+  animation: reveal 0.55s var(--ease-out) forwards;
+  animation-delay: calc(var(--i) * 45ms);
 }
 
 .img {
   width: 100%;
   height: auto;
-  max-height: 78px;
+  max-height: 4.5rem;
   object-fit: contain;
   display: block;
-  transition: filter 0.25s ease;
+  transition: filter 0.25s ease, transform 0.25s ease;
 }
-
 
 @media (hover: hover) {
-  .item:hover {
-    transform: translateY(-2px);
-  }
   .item:hover .img {
-    filter: contrast(1.05) saturate(1.05);
+    filter: contrast(1.06);
+    transform: translateY(-1px);
   }
 }
 
-/* Keyframes for reveal */
 @keyframes reveal {
   to {
     opacity: 1;
@@ -115,56 +101,28 @@ const props = defineProps({
   }
 }
 
-/* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .item {
     opacity: 1;
     transform: none;
     animation: none;
-    transition: none;
-  }
-
-  .img {
-    transition: none;
   }
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .img {
-    max-height: 74px;
-  }
 }
 
 @media (max-width: 700px) {
-  .awards {
-    padding: 16px 0 20px;
-  }
-
-  .inner {
-    padding: 0 16px;
-  }
-
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px 12px;
-  }
-  .img {
-    max-height: 56px;
-  }
-}
-
-@media (max-width: 420px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px 10px;
+    gap: 0.65rem 0.75rem;
   }
 
   .img {
-    max-height: 48px;
+    max-height: 3.25rem;
   }
 }
 </style>
