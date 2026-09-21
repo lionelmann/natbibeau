@@ -170,8 +170,14 @@ const upcoming = [
     metaLines: [
       "Premieres October 7, 2026 at 8 p.m. on CBC",
       "Streaming on CBC Gem",
+      "3 × 1hr",
+      "A CBC Original with Muse Entertainment",
+      "A Series by Nathalie Bibeau",
     ],
-    description: [],
+    description: [
+      "The inconceivable saga of Kaitlyn Braun, a 25-year old social worker who called on over 40 doulas to support her through multiple traumatic pregnancies and births.",
+      "With intimate access to both the victims and the perpetrator, Doula explores same-gender crime, the nature of empathy and the controversial question of its limitations.",
+    ],
   },
   {
     title: "Gagged",
