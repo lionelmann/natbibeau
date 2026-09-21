@@ -141,7 +141,6 @@ const upcoming = [
   },
   {
     title: "Doula",
-    subtitle: "(working title)",
     img: "/images/doula.png",
     metaLines: [
       "Planned Release: 2026",
