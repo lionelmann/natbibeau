@@ -199,6 +199,10 @@ const isWide = computed(() => props.aspectRatio !== "2 / 3");
     margin: 0 auto;
   }
 
+  .work.wide .media {
+    max-width: none;
+  }
+
   .title {
     max-width: none;
   }
