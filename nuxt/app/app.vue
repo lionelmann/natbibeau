@@ -60,6 +60,40 @@ const works = [
     recognition: [],
   },
   {
+    title: "The Unsolved Murder of Beverly Lynn Smith",
+    img: "/images/unsolved.jpg",
+    metaLines: [
+      "2022",
+      "4 × 1 hr series",
+      "Series Director / Showrunner / Co-Executive Producer",
+      "An Amazon Original with Muse Entertainment",
+    ],
+    description:
+      "A cinematic study of a controversial cold case and the fifty-year search for justice that refuses to settle.",
+    credits: [
+      { label: "Series Directed by", value: "Nathalie Bibeau" },
+      { label: "Written by", value: "Andrea Stewart, Nathalie Bibeau" },
+      { label: "Series Produced by", value: "Tara Jan" },
+      {
+        label: "Story Editors",
+        value: "Andrea Stewart, Tara Hughes, Sean Robb, Brooks Gray",
+      },
+      { label: "Associate Producer", value: "Rachel Browne" },
+      {
+        label: "Executive Producers",
+        value: "Jonas Prupas, Courtney Dobbins, Catherine Legge",
+      },
+      { label: "Cinematography", value: "Christian Bielz" },
+      { label: "Original score", value: "Todor Kobakov" },
+      {
+        label: "Edited by",
+        value: "Graeme Ball, Steve Taylor, Clark Masters, Jon Deitcher, Nick Taylor",
+      },
+      { label: "Production Designer", value: "Brendan Callaghan" },
+    ],
+    recognition: [],
+  },
+  {
     title: "The Walrus and the Whistleblower",
     img: "/images/walrus.jpg",
     metaLines: [
@@ -97,40 +131,6 @@ const works = [
           "Donald Brittain Award for Best Social & Political Documentary; Best Editorial Research; Best Cinematography",
       },
     ],
-  },
-  {
-    title: "The Unsolved Murder of Beverly Lynn Smith",
-    img: "/images/unsolved.jpg",
-    metaLines: [
-      "2022",
-      "4 × 1 hr series",
-      "Series Director / Showrunner / Co-Executive Producer",
-      "An Amazon Original with Muse Entertainment",
-    ],
-    description:
-      "A cinematic study of a controversial cold case and the fifty-year search for justice that refuses to settle.",
-    credits: [
-      { label: "Series Directed by", value: "Nathalie Bibeau" },
-      { label: "Written by", value: "Andrea Stewart, Nathalie Bibeau" },
-      { label: "Series Produced by", value: "Tara Jan" },
-      {
-        label: "Story Editors",
-        value: "Andrea Stewart, Tara Hughes, Sean Robb, Brooks Gray",
-      },
-      { label: "Associate Producer", value: "Rachel Browne" },
-      {
-        label: "Executive Producers",
-        value: "Jonas Prupas, Courtney Dobbins, Catherine Legge",
-      },
-      { label: "Cinematography", value: "Christian Bielz" },
-      { label: "Original score", value: "Todor Kobakov" },
-      {
-        label: "Edited by",
-        value: "Graeme Ball, Steve Taylor, Clark Masters, Jon Deitcher, Nick Taylor",
-      },
-      { label: "Production Designer", value: "Brendan Callaghan" },
-    ],
-    recognition: [],
   },
   {
     title: "Sugar Coated",
