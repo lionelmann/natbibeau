@@ -84,10 +84,11 @@ const isReversed = computed(() => props.index % 2 === 1);
 }
 
 .title {
-  font-size: clamp(1.7rem, 3.6vw, 2.65rem);
+  font-size: clamp(1.85rem, 3.8vw, 2.85rem);
   color: var(--color-burgundy);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {

@@ -33,11 +33,11 @@
 
 .title {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.55rem, 3.4vw, 2.35rem);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
   line-height: 0.95;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  text-transform: none;
 }
 
 .subtitle {

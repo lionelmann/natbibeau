@@ -80,11 +80,11 @@ defineProps({
 .title {
   margin: 0.55rem 0 0;
   font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: clamp(2rem, 8vw, 5.5rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-transform: none;
+  font-size: clamp(2.4rem, 8vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   color: var(--color-burgundy);
   text-align: center;
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);

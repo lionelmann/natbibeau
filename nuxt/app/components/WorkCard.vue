@@ -106,10 +106,11 @@ const isReversed = computed(() => props.index % 2 === 1);
 }
 
 .title {
-  font-size: clamp(1.7rem, 3.6vw, 2.65rem);
+  font-size: clamp(1.85rem, 3.8vw, 2.85rem);
   color: var(--color-burgundy);
-  font-weight: 700;
-  max-width: 16ch;
+  font-weight: 600;
+  max-width: 18ch;
+  letter-spacing: -0.02em;
 }
 
 .meta {
@@ -139,12 +140,12 @@ const isReversed = computed(() => props.index % 2 === 1);
 
 .block-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: 600;
   color: var(--color-burgundy);
   margin-bottom: 0.7rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 .list-item {

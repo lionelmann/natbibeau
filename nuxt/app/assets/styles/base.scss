@@ -1,6 +1,11 @@
-@import "@fontsource/libre-baskerville/latin-400.css";
-@import "@fontsource/libre-baskerville/latin-400-italic.css";
-@import "@fontsource/libre-baskerville/latin-700.css";
+@import "@fontsource/cormorant-garamond/latin-500.css";
+@import "@fontsource/cormorant-garamond/latin-600.css";
+@import "@fontsource/cormorant-garamond/latin-700.css";
+@import "@fontsource/cormorant-garamond/latin-500-italic.css";
+@import "@fontsource/newsreader/latin-400.css";
+@import "@fontsource/newsreader/latin-400-italic.css";
+@import "@fontsource/newsreader/latin-500.css";
+@import "@fontsource/newsreader/latin-700.css";
 @import "@fontsource/space-grotesk/latin-400.css";
 @import "@fontsource/space-grotesk/latin-500.css";
 @import "@fontsource/space-grotesk/latin-700.css";
@@ -15,8 +20,8 @@
   --color-cream: #fef8e8;
   --color-rule: rgba(122, 44, 31, 0.28);
 
-  --font-display: "Bauhaus", "Century Gothic", "Futura", sans-serif;
-  --font-body: "Libre Baskerville", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-meta: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
 
   --measure: 62ch;
@@ -37,8 +42,8 @@ html {
 
 body {
   font-size: 1.0625rem;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,9 +53,9 @@ h3,
 .display,
 .title {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 em {
