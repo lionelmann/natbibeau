@@ -140,19 +140,13 @@ const upcoming = [
     ],
   },
   {
-    title: "Doula",
-    subtitle: "(working title)",
+    title: "Doula: A True Crime",
     img: "/images/doula.png",
     metaLines: [
-      "Planned Release: 2026",
-      "3 × 1hr",
-      "A CBC Original with Muse Entertainment",
-      "A Series by Nathalie Bibeau",
+      "Premieres October 7, 2026 at 8 p.m. on CBC",
+      "Streaming on CBC Gem",
     ],
-    description: [
-      "The inconceivable saga of Kaitlyn Braun, a 25-year old social worker who called on over 40 doulas to support her through multiple traumatic pregnancies and births.",
-      "With intimate access to both the victims and the perpetrator, Doula explores same-gender crime, the nature of empathy and the controversial question of its limitations.",
-    ],
+    description: [],
   },
   {
     title: "Gagged",
